@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tomato Disease Detection</title>
+<style>
+.error {
+  color: red;
+}
+</style>
 </head>
 
 <body>
@@ -10,7 +17,8 @@
 
 <form method="POST" enctype="multipart/form-data">
 
-<input type="file" name="image" required>
+<label for="image">Select Image:</label>
+<input type="file" name="image" id="image" required>
 <br><br>
 
 <button type="submit">Predict Disease</button>
@@ -20,7 +28,7 @@
 
 {% if img_path %}
 <h3>Uploaded Image</h3>
-<img src="{{ img_path }}" width="300">
+<img src="{{ img_path }}" width="300" alt="Uploaded tomato leaf image for disease detection">
 {% endif %}
 
 
